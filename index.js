@@ -32,7 +32,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", () => {
 	console.log(`${bot.user.tag} is Online on ${bot.guilds.cache.size} servers!`);
-	bot.user.setActivity(`I'm on ${bot.guilds.cache.size} servers!`);
+	bot.user.setActivity(`I'm on ${bot.guilds.cache.size} servers! In Alpha state`);
 });
 
 bot.on("message", async msg => {
