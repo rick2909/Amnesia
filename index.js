@@ -1,3 +1,4 @@
+const { Console } = require("console");
 const Discord = require("discord.js");
 const { setTimeout } = require("timers");
 const client = new Discord.Client();
@@ -40,10 +41,12 @@ client.on("message", (msg) => {
 
 function alarm(msg) {
   msg.content = msg.content.substring(6, msg.content.length);
+  console.log("message content is: " + msg.content);
   let pivot = getAlarmPivot(msg.content);
+  console.log("Pivot is: " + pivot);
   if (pivot != -1) {
     setTimeout(function () {
-      msg.channel.send(msg.content(pivot + 1, msg.content.length)),
+      msg.channel.send(msg.content(pivot + 1)),
         parseInt(msg.content.substring(0, pivot));
     });
     return;
@@ -56,7 +59,7 @@ function alarm(msg) {
 
 function getAlarmPivot(message) {
   for (let i = 0; i < message.length - 1; i++) {
-    if (message.substring(i, i + 1)) {
+    if (message.substring(i, i + 1) === " ") {
       return i;
     }
   }
