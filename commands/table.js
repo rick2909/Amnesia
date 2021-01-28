@@ -13,13 +13,13 @@ module.exports.run = async (bot, message, args) => {
 		.setDescription(`Now it is ${weekDay}`)
 		.setThumbnail("https://media.giphy.com/media/W2oh5l7ZcedqXDP1NZ/giphy.gif")
 		.addFields(
-			{ name: "Monday", value: "Some value here", inline: true },
-			{ name: "Tuesday", value: "Something else", inline: true },
-			{ name: "Wednesday", value: "Some value here", inline: true },
-			{ name: "Thursday", value: "Some value here", inline: true },
-			{ name: "Friday", value: "Some value here", inline: true },
-			{ name: "Saturday", value: "Some value here", inline: true },
-			{ name: "Sunday", value: "Some value here", inline: true },
+			{ name: "Monday", value: "Some value here" },
+			{ name: "Tuesday", value: "Something else" },
+			{ name: "Wednesday", value: "Some value here" },
+			{ name: "Thursday", value: "Some value here" },
+			{ name: "Friday", value: "Some value here" },
+			{ name: "Saturday", value: "Some value here" },
+			{ name: "Sunday", value: "Some value here" },
 		)
 		.setTimestamp()
 		.setFooter(`Week: ${weekNumber}`, bot.user.avatarURL());
