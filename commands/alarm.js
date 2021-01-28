@@ -1,4 +1,6 @@
 module.exports.run = async (bot, message, args) => {
+	const ErrorMessage = "Incorrect use of alarm command: ~alarm [amount][format s|m|h|d|w|M] [message]";
+
 	const alarmFormats = [
 		["s", "second(s)", 1000],
 		["m", "minute(s)", 60000],
@@ -11,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
 	const messageContent = await message.content.substring(7);
 	const pivot = getPivot(messageContent);
 	if (pivot == -1) {
-		message.channel.send("Incorrect use of alarm command: ~alarm [amount][format s|m|h|d|w|M] [message]");
+		message.channel.send(ErrorMessage);
 	}
 
 	const time = messageContent.substring(0, pivot);
@@ -19,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
 
 	const formatIndex = getFormat(time, alarmFormats);
 	if (formatIndex == -1) {
-		message.channel.send("Incorrect use of alarm command: ~alarm [amount][format s|m|h|d|w|M] [message]");
+		message.channel.send(ErrorMessage);
 	}
 	const msg = await message.reply(
 		`alarm set for ${time.substring(0, time.length - 1)} ${
