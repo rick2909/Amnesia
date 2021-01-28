@@ -10,9 +10,12 @@
         "url": "https://github.com/rick2909/Amnesia.git"
     },
     "dependencies": {
+        "canvas": "^2.6.1",
         "discord.js": "12.5.1",
         "dotenv": "^8.2.0",
         "eslint": "^7.18.0",
-        "fs": "0.0.1-security"
+        "fs": "0.0.1-security",
+        "mongoose": "^5.11.13",
+        "table-on-canvas": "^1.0.5"
     }
 }
