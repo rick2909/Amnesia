@@ -1,5 +1,14 @@
+const { DiscordAPIError } = require("discord.js");
+
+const Discord = require("discord.js");
+
 module.exports.run = async (bot, message, args) => {
-	message.reply("Goodnight girl, see you tomorrow https://tenor.com/view/imma-see-you-tomorrow-bye-slip-gif-15146678");
+	const goodnightEmbed = new Discord.MessageEmbed()
+		.setColor("#0099ff")
+		.setTitle("Goodnight girl, see you tomorrow");
+	const gif = new Discord.MessageAttachment("Assets/command/goodnight.gif");
+	message.channel.send({embed: goodnightEmbed, files: [gif]});
+
 };
 
 module.exports.help = {
