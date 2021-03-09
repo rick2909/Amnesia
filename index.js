@@ -36,8 +36,6 @@ bot.on("ready", () => {
 });
 
 bot.on("message", async (msg) => {
-	// disable DM
-	if (msg.channel.type === "dm") return;
 	// disable responding to it self
 	if (msg.author.id === bot.user.id) return;
 
@@ -61,3 +59,5 @@ bot.on("message", async (msg) => {
 });
 
 bot.login(process.env.TOKEN);
+
+module.exports.bot = bot;
